@@ -1,0 +1,14 @@
+[Unit]
+Description=Oust Game
+After=bluetooth.target
+
+[Service]
+User=root
+Type=exec
+WorkingDirectory=/home/oust/Oust
+ExecStart=/usr/bin/python oust.py
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
