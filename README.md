@@ -134,17 +134,23 @@ If you were starting out from scratch this is what it would look like:
 	```
 	
 1. Check that Oust runs `sudo python oust.py`
+	* Pair at least one controller at this point to test it all works with bluetooth.
 	* Press `CTRL + C` to exit 
-	* I recommend pairing a new controller at this point to test it all works with bluetooth.
 
 1. Set up Oust in SystemD, so it auto-runs on boot. 
 	1. Install the config file `sudo cp oust.service /etc/systemd/system/`
 	1. Start the service: `sudo systemctl start oust.service`
-	1. Monitor the service live as it runs `journalctl --follow --unit=oust.service --lines=20`
 	1. Take a sneak peek at the service `systemctl status oust.service`
-	1. If it all looks fine, enable the service `sudo systemctl enable oust.service`
+		* If Oust is running, the paired controller should pair and glow orange when turned on.
+		*  You can also monitor the service live as it runs `journalctl --follow --unit=oust.service --lines=20`
+			*  `CTRL + C` to exit.
+	1. If it all seems fine, enable the service `sudo systemctl enable oust.service`
 	1. Reboot `sudo reboot`
-	1. log back in and see if it's running `systemctl status oust.service`
+	1. When it reboots, Oust should be running:
+		1. If you turn on a paired controller, it should glow orange
+		1. If you plug in a new controller, it should pair
+		1. To double check, log back in and look at the service status `systemctl status oust.service` 
+			* It should be enabled and active/running
 
 
 Things You Should Know
