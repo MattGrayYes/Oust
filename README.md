@@ -85,13 +85,12 @@ If you were starting out from scratch this is what it would look like:
 ### Install Software on Raspberry Pi
 
 1. Install the operating system on an SD Card, using the official [Raspberry Pi Imager](https://www.raspberrypi.com/software/) with these settings:
-	* **OS**: Other / Raspberry Pi OS Lite (64-bit)
+	* **OS**: Raspberry Pi OS Other / Raspberry Pi OS Lite (64-bit)
 	* **Hostname**: oust
-	* **User**: oust/oust
-	* **Wifi**: details to connect to your local network for setup
-	* **SSH**: enabled
-		* I chose to set this to *public-key only* and upload my public key, so password auth doesn't work over SSH
-
+	* **Username/Password**: oust/oust
+	* **Wifi**: connect to local network for setup
+	* **Remote Access**: SSH enabled
+	* **Raspberry Pi Connect**: Disabled
 1. Boot Pi
 1. SSH in `ssh oust@oust` or connect KVM to install stuff:
 
