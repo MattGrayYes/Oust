@@ -115,7 +115,7 @@ If you were starting out from scratch this is what it would look like:
 		cmake .. -DPSMOVE_BUILD_TRACKER=OFF
 		make
 		```
-		* If the above doesnt build you may need to do this first
+		* If the above doesnt build, this is the script that comes with PSMoveAPI, but it builds loads more stuff than Oust uses.
 			```
 			bash -e -x scripts/linux/build-debian
 			```
