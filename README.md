@@ -99,7 +99,7 @@ If you were starting out from scratch this is what it would look like:
 	sudo apt install git vim bluez
 	```
 1. Install PSMove API
-	1. Download Current PSMove API and install dependencies (took surprisingly long)
+	1. Download Current PSMove API and install dependencies
 
 		```
 		git clone https://github.com/thp/psmoveapi.git
@@ -107,6 +107,8 @@ If you were starting out from scratch this is what it would look like:
 		git submodule update --init
 		bash -e -x scripts/install_dependencies.sh
 		```
+		* This took surprisingly long.
+		* In theory a load of these dependencies can probably be removed, as we're not building all the products.
 	1. Build PSMove API.
 	
 		```
@@ -115,10 +117,7 @@ If you were starting out from scratch this is what it would look like:
 		cmake .. -DPSMOVE_BUILD_TRACKER=OFF
 		make
 		```
-		* If the above doesnt build, this is the script that comes with PSMoveAPI, but it builds loads more stuff than Oust uses.
-			```
-			bash -e -x scripts/linux/build-debian
-			```
+		* If the above doesnt build, this is the script that comes with PSMoveAPI, but it builds loads more stuff than Oust uses. `bash -e -x scripts/linux/build-debian`
 1. Change Bluetooth input settings to allow it to pair to PSMove controller.
 
 	```
